@@ -11,15 +11,17 @@ team of 5 members, all from [Devexperts](https://devexperts.com/).
 
 ## Denis Iudovich
 
+<img src="images/Denis.jpg" width="150" alt="Denis Iudovich">
+
 Role: Solution Architect
 
 [LinkedIn](https://www.linkedin.com/in/denis-yudovich/)
 
 Denis is a solution architect with 7 years of experience in development management in security and fintech domains.
 
-<img src="images/Denis.jpg" width="150" alt="Denis Iudovich">
-
 ## Ivan Kunyankin
+
+<img src="images/Ivan.jpg" width="150" alt="Ivan Kunyakin">
 
 Role: AI Team Lead
 
@@ -28,9 +30,9 @@ Role: AI Team Lead
 Ivan has over five years of experience in data science, during which he has contributed to a variety of projects. He is 
 leading a team focused on applying machine learning and AI in the fintech industry.
 
-<img src="images/Ivan.jpg" width="150" alt="Ivan Kunyakin">
-
 ## Kiril Stoilov
+
+<img src="images/Kiril.jpg" width="150" alt="Kiril Stoilov">
 
 Role: Solution Architect
 
@@ -39,9 +41,9 @@ Role: Solution Architect
 Kiril is a solution architect and software engineer with over 20 years of experience spanning FinTech, Telecom, 
 Gambling and Gaming industries with AWS hands-on expertise.
 
-<img src="images/Kiril.jpg" width="150" alt="Kiril Stoilov">
-
 ## Viktor Isaev
+
+<img src="images/Viktor.png" width="150" alt="Viktor Isaev">
 
 Role: Enterprise Architect
 
@@ -50,9 +52,9 @@ Role: Enterprise Architect
 Viktor is an architect and a software engineer with over 20 years of hands on experience in software development and 
 design in many companies, both startups and enterprise. He is a certified AWS Solutions Architect Associate.
 
-<img src="images/Viktor.png" width="150" alt="Viktor Isaev">
-
 ## Zhivko Angelov
+
+<img src="images/Zhivko.png" width="150" alt="Zhivko Angelov">
 
 Role: Solution Architect
 
@@ -60,8 +62,6 @@ Role: Solution Architect
 
 Zhivko is an IT professional with over 20 years of experience as a software engineer, solution architect and delivery 
 manager. He has a strong expertise in BI, Blockchain, API management and integration projects in the Fintech industry.
-
-<img src="images/Zhivko.png" width="150" alt="Zhivko Angelov">
 
 # Problem
 
