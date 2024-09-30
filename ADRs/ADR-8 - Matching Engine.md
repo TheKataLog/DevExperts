@@ -64,5 +64,4 @@ translation)
 
 ## Reversibility
 
-This decision is **somewhat reversible**. There is no “no turning back”s, but there is no half-way alternatives either 
-- switching to a different approach would likely require implementing it from scratch. 
+This decision is **somewhat reversible**. There is no “no turning back”s, but there is no half-way alternatives either - switching to a different approach would likely require implementing it from scratch. 

@@ -53,7 +53,7 @@ development.
 
 ## Alternatives Considered
 
-On-premise cloud**:**
+On-premise cloud:
 
 - A self-hosted application would require provisioning and maintaining servers, databases, and ML models, leading to 
 higher operational overhead.

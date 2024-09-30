@@ -32,7 +32,7 @@ our Core Domain Model. We get the following RESTful Services as a result:
 
 Each RESTful Service handles a part of the Core Domain Model, and is fully responsible for the persistence, safety, and 
 correctness of the data it deals with. This way, our Primary Database is broken into independent pieces by number of
-[bounded contexts](../Terms/Bounded%20context.md)s.
+[bounded contexts](../Terms/Bounded%20context.md).
 
 ## Implementation
 

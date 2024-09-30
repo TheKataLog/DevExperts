@@ -1,3 +1,5 @@
+#Deployment
+
 ![deployment.png](images/deployment.png)
 
 All the components of the system are deployed in a single AWS account in a single region (we propose us-east-2, Ohio).
