@@ -148,7 +148,7 @@ organization, and we assume tough budget constraints.
 
 Given the driving characteristics above, we have selected **Event-driven architecture** style in the Styles Worksheet, 
 because it fits these characteristics best. This is our first architectural decision: 
-[https://coda.io/d/_dF0G5Ugnocr/_suGBy](https://coda.io/d/_dF0G5Ugnocr/_suGBy) .
+[ADR-1 - Event-driven Architecture](ADRs/ADR-1%20-%20Event-driven%20Architecture.md) .
 
 In terms of CAP theorem, we are concluded that we are building an AP system - we strive to high availability by giving 
 up strong consistency and sticking to just eventual consistency (an update may not fully propagate through the system 
