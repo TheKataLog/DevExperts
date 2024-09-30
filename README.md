@@ -25,7 +25,7 @@ Role: AI Team Lead
 [LinkedIn](https://www.linkedin.com/in/ivan-kunyankin/)
 
 Ivan has over five years of experience in data science, during which he has contributed to a variety of projects. He is 
-leading a team focused on applying machine learning and AI in the fintech industry.
+leading a team focused on applying machine learning and AI in the Fintech industry.
 
 <img src="images/Ivan.jpg" width="150" alt="Ivan Kunyakin">
 
@@ -66,7 +66,7 @@ manager. He has a strong expertise in BI, Blockchain, API management and integra
 
 ## Requirements
 
-A non-profit organization, Diversity Cyber Council, would like to to establish a sustainable and diverse talent 
+A non-profit organization, Diversity Cyber Council, would like to establish a sustainable and diverse talent 
 pipeline that extends career equity to underrepresented demographics. Their goals is to identify and reduce potential 
 biases in the job candidate hiring and interview process, as well as to reduce redundancy and ineffectiveness of the 
 traditional applicant tracking software matching viable candidates with job descriptions.
@@ -111,13 +111,14 @@ We followed an architecture design approach with the steps below:
 9. Prepare a container diagram
 10. Prepare additional component diagrams to focus on key solution components
 11. Document as ADRs the decisions we made throughout the entire process
+12. Prepare a deployment diagram
+13. Prepare a high-level cost estimate
 
 We used [Miro](https://miro.com/) as a tool for drawing and collaboration.
 
 We used [Coda](https://coda.io/) to prepare the documentation.
 
-We had one week to design the architecture, so we conducted a multiple brainstorming sessions, as well as daily sync-up 
-meetings.
+We had one week to design the architecture, so we conducted a multiple brainstorming sessions, as well as daily sync-up meetings.
 
 This is how our Miro board looks like:
 
@@ -128,7 +129,7 @@ The deliverables of our architecture design are presented in the next sections.
 # Architecture Characteristics and Style
 
 Given the above assumptions, we started our design process with defining a 
-[https://coda.io/d/_dF0G5Ugnocr/_suW4e](https://coda.io/d/_dF0G5Ugnocr/_suW4e) .
+[Solution Worksheet](./Solution%20Worksheet.md).
 
 We identified the following driving characteristics of our architecture:
 
@@ -147,11 +148,9 @@ organization, and we assume tough budget constraints.
 
 Given the driving characteristics above, we have selected **Event-driven architecture** style in the Styles Worksheet, 
 because it fits these characteristics best. This is our first architectural decision: 
-[https://coda.io/d/_dF0G5Ugnocr/_suGBy](https://coda.io/d/_dF0G5Ugnocr/_suGBy) .
+[ADR-1 - Event Driven Architecture](./ADRs/ADR-1%20-%20Event-driven%20Architecture.md).
 
-In terms of CAP theorem, we are concluded that we are building an AP system - we strive to high availability by giving 
-up strong consistency and sticking to just eventual consistency (an update may not fully propagate through the system 
-all at once, but it is guaranteed to *eventually* propagate).
+In terms of CAP theorem, we concluded that we are building an AP system - we strive to high availability by giving up strong consistency and sticking to just eventual consistency (an update may not fully propagate through the system all at once, but it is guaranteed to *eventually* propagate).
 
 # Thought Process and Architecture Decisions
 
@@ -230,7 +229,7 @@ Also, we have designed the architecture for Matching Engine, and we cover it in
 ## Authentication, Authorization, and Monitoring
 
 We certainly need to secure our system with authentication and authorization, and we cover it in 
-[ADR-4 - Auhtentication, Authorization](ADRs/ADR-4%20-%20Authentication,%20Authorization.md) .
+[ADR-4 - Authentication, Authorization](ADRs/ADR-4%20-%20Authentication,%20Authorization.md) .
 
 For monitoring we use native AWS capabilities and services: [CloudWatch](https://aws.amazon.com/cloudwatch/) and 
 [CloudTrail](https://aws.amazon.com/cloudtrail/). For improved security, more advanced services may be used, like [AWS 
@@ -240,13 +239,7 @@ operations team requirements.
 
 ## User Interaction
 
-Users interact with the system through the user interfaces. There is a separate interface for JobCandidates (even 2: 
-Web interface and mobile application), Employers, and Administrators. Each of these interfaces has a Frontend and a 
-Backend part. Our architecture implies creating a dedicated Backend service for each Frontend, with an HTTP API 
-tailored particularly for that Frontend (there is a Backend-for-Frontend - BFF - term in the industry exactly for 
-mentioning this type of backends). Each Backend receives the requests from its respective Frontend, and handles them by 
-using the API of the RESTful Services (in case it needs to read or modify the data of the Core Model) and by invoking 
-the business pipelines (in case it needs to trigger a business process like “Submit Resume”).
+Users interact with the system through the user interfaces. There is a separate interface for JobCandidates (even 2: Web interface and mobile application), Employers, and Administrators. Each of these interfaces has a Frontend and a Backend part. Our architecture implies creating a dedicated Backend service for each Frontend, with an HTTP API tailored particularly for that Frontend (there is a Backend-for-Frontend - BFF - term in the industry exactly for mentioning this type of backends). Each Backend receives the requests from its respective Frontend, and handles them by using the API of the RESTful Services (in case it needs to read or modify the data of the Core Model) and by invoking the business pipelines (in case it needs to trigger a business process like “Submit Resume”).
 
 ![Handling user interactions - high-level diagram](images/user-interaction.png)
 
@@ -284,7 +277,7 @@ pretty standard
 The Event analytics model is very simple: it’s a single entity which holds the data about all the business events that 
 have occurred in the system.
 
-![Event model for analytics](images%2Fevent-model.png)
+![Event model for analytics](images%2Fevent-model.png | width=200)
 
 The `key` field is an idempotency key - a unique identifier of an event.
 
@@ -292,12 +285,12 @@ The `payload` field is a full JSON payload of an event. In addition to `payload`
 may be added as separate columns to simplify queries and optimize query processing.
 
 The actual technology and architecture of the Analytics and Reporting part is covered in 
-[ADR-10 - Analytics and Reporting](ADRs/ADR-10%20-%20Analytics%20and%20Reporting.md) .
+[ADR-10 - Analytics and Reporting](ADRs/ADR-10%20-%20Analytics%20and%20Reporting.md).
 
 # C4 Model
 
 Our C4 models describe the structure of the system and can be found here: 
-[C4](Diagrams/C4.md) .
+[C4 model](Diagrams/C4.md) .
 
 # Architecture Decision Records
 
@@ -324,18 +317,18 @@ to probably use the service just once a week or so.
 
 Based on the assumption above, we estimated the following monthly costs:
 
-AWS services: $704 (estimate [here](https://calculator.aws/#/estimate?id=8927b6f191aa0c4a2b0410a4508aa278014eabb8))
+AWS services: $704 (estimate breakdown [here](https://calculator.aws/#/estimate?id=8927b6f191aa0c4a2b0410a4508aa278014eabb8))
 
 The **yearly total cost** of the whole infrastructure is: **$8448**
 
 # **Postponed Decisions or Well-known Issues**
 
-We have skipped overs some architectural decisions and technical nuances, which are seemingly easy to design having our 
+We have skipped over some architectural decisions and technical nuances, which are seemingly easy to design having our 
 architecture documentation at hand.
 
 | Decision                      | Why postponed?                                                                                                                                                                                                                                                                                                               |
 |-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Frontend architecture         | Frontend architecture is highly dependent on the actual team that is going to implement UIs for ClearView. Also, the Frontends are pretty much isolated from the rest of the system, so the architectural decisions there do not affect the rest of the architecture by and large.                                           |
+| Frontend architecture         | Frontend architecture is highly dependent on the actual team that is going to implement UIs for ClearView. Also, the Frontends are pretty much isolated from the rest of the system, so the technical decisions there do not affect the rest of the architecture by and large.                                           |
 | Administration                | The design of administrative applications and workflows is easy to make by analogy to all the rest that is done in the system. The domain model, the RESTful Service, the Backend-for-Frontend and the UI application will just follow the same pattern that other components follow.                                        |
 | Survey logic                  | Due to the lack of time, we haven’t designed the business process for the interviewing and the surveys, but they will use the same technologies and follow the same architectural approach.                                                                                                                                  |
 | DDoS protection               | It boils down to merely using AWS Shield Standard or Shield Advanced. The actual settings depend on the traffic pattern.                                                                                                                                                                                                     |
