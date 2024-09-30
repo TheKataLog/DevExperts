@@ -144,7 +144,7 @@ We identified the following driving characteristics of our architecture:
 | Workflow           | Because the business logic of user interactions consists of multiple steps separated in time, and is likely to evolve and change.                                                                |
 
 Another important characteristic we identified is **Cost efficiency**, because we’re dealing with a non-profit 
-organization, and we assume tough budget constraints.
+organization, and we assume tough budget constraints (you can find our budget estimates [here](#cost-estimation)).
 
 Given the driving characteristics above, we have selected **Event-driven architecture** style in the Styles Worksheet, 
 because it fits these characteristics best. This is our first architectural decision: 
