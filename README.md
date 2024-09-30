@@ -129,7 +129,7 @@ The deliverables of our architecture design are presented in the next sections.
 # Architecture Characteristics and Style
 
 Given the above assumptions, we started our design process with defining a 
-[https://coda.io/d/_dF0G5Ugnocr/_suW4e](https://coda.io/d/_dF0G5Ugnocr/_suW4e) .
+[Solution Worksheet](Solution%20Worksheet.md) .
 
 We identified the following driving characteristics of our architecture:
 
