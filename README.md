@@ -285,7 +285,7 @@ pretty standard
 The Event analytics model is very simple: it’s a single entity which holds the data about all the business events that 
 have occurred in the system.
 
-![Event model for analytics](images%2Fevent-model.png)
+<img src="images/event-model.png" width="300" alt="Event model for analytics">
 
 The `key` field is an idempotency key - a unique identifier of an event.
 
