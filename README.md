@@ -1,8 +1,8 @@
 # Overview
 
 This document is an overview of our solution for [ClearView](https://docs.google.com/document/d/1jCHMAvgzqaYaAp09br12OC4ozpVXZR3s9ezgEqncZ9U) 
-system for Architecture Katas 2024 Fall. It describes our thought process and guides through the architecture and the 
-decisions we have made.
+system for [O'Reilly Architecture Katas 2024 Fall](https://learning.oreilly.com/live-events/architectural-katas/0636920097101/). 
+It describes our thought process and guides through the architecture and the decisions we have made.
 
 # Our Team
 
