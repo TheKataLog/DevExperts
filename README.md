@@ -1,7 +1,8 @@
 # Overview
 
-This document is an overview of our solution for Architecture Katas 2024 Fall. It describes our thought process and 
-guides through the architecture and the decisions we have made.
+This document is an overview of our solution for [ClearView](https://docs.google.com/document/d/1jCHMAvgzqaYaAp09br12OC4ozpVXZR3s9ezgEqncZ9U) 
+system for Architecture Katas 2024 Fall. It describes our thought process and guides through the architecture and the 
+decisions we have made.
 
 # Our Team
 
@@ -66,12 +67,12 @@ manager. He has a strong expertise in BI, Blockchain, API management and integra
 
 ## Requirements
 
-A non-profit organization, Diversity Cyber Council, would like to to establish a sustainable and diverse talent 
+A non-profit organization, Diversity Cyber Council, would like to establish a sustainable and diverse talent 
 pipeline that extends career equity to underrepresented demographics. Their goals is to identify and reduce potential 
 biases in the job candidate hiring and interview process, as well as to reduce redundancy and ineffectiveness of the 
 traditional applicant tracking software matching viable candidates with job descriptions.
 
-For this purpose, the organization strives to implement a supplemental HR platform that anonymizes candidate 
+For this purpose, the organization strives to implement a supplemental HR platform - ClearView - that anonymizes candidate 
 information while highlighting their objective skills and qualifying experience. Candidates will upload their resumes 
 and the system will leverage AI to construct stories about them, while eliminating all personal information. Companies 
 will post job descriptions and will pay to unlock matched profiles. Data points will be aggregated to reveal any 
