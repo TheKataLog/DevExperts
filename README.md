@@ -1,7 +1,8 @@
 # Overview
 
-This document is an overview of our solution for Architecture Katas 2024 Fall. It describes our thought process and 
-guides through the architecture and the decisions we have made.
+This document is an overview of our solution for [ClearView](https://docs.google.com/document/d/1jCHMAvgzqaYaAp09br12OC4ozpVXZR3s9ezgEqncZ9U) 
+system for [O'Reilly Architectural Katas 2024 Fall](https://learning.oreilly.com/live-events/architectural-katas/0636920097101/). 
+It describes our thought process and guides through the architecture and the decisions we have made.
 
 # Our Team
 
@@ -10,15 +11,17 @@ team of 5 members, all from [Devexperts](https://devexperts.com/).
 
 ## Denis Iudovich
 
+<img src="images/Denis.jpg" width="150" alt="Denis Iudovich">
+
 Role: Solution Architect
 
 [LinkedIn](https://www.linkedin.com/in/denis-yudovich/)
 
 Denis is a solution architect with 7 years of experience in development management in security and fintech domains.
 
-<img src="images/Denis.jpg" width="150" alt="Denis Iudovich">
-
 ## Ivan Kunyankin
+
+<img src="images/Ivan.jpg" width="150" alt="Ivan Kunyakin">
 
 Role: AI Team Lead
 
@@ -31,6 +34,8 @@ leading a team focused on applying machine learning and AI in the Fintech indust
 
 ## Kiril Stoilov
 
+<img src="images/Kiril.jpg" width="150" alt="Kiril Stoilov">
+
 Role: Solution Architect
 
 [LinkedIn](https://www.linkedin.com/in/kiril-stoilov-9a30401)
@@ -38,9 +43,9 @@ Role: Solution Architect
 Kiril is a solution architect and software engineer with over 20 years of experience spanning FinTech, Telecom, 
 Gambling and Gaming industries with AWS hands-on expertise.
 
-<img src="images/Kiril.jpg" width="150" alt="Kiril Stoilov">
-
 ## Viktor Isaev
+
+<img src="images/Viktor.png" width="150" alt="Viktor Isaev">
 
 Role: Enterprise Architect
 
@@ -49,9 +54,9 @@ Role: Enterprise Architect
 Viktor is an architect and a software engineer with over 20 years of hands on experience in software development and 
 design in many companies, both startups and enterprise. He is a certified AWS Solutions Architect Associate.
 
-<img src="images/Viktor.png" width="150" alt="Viktor Isaev">
-
 ## Zhivko Angelov
+
+<img src="images/Zhivko.png" width="150" alt="Zhivko Angelov">
 
 Role: Solution Architect
 
@@ -59,8 +64,6 @@ Role: Solution Architect
 
 Zhivko is an IT professional with over 20 years of experience as a software engineer, solution architect and delivery 
 manager. He has a strong expertise in BI, Blockchain, API management and integration projects in the Fintech industry.
-
-<img src="images/Zhivko.png" width="150" alt="Zhivko Angelov">
 
 # Problem
 
@@ -71,7 +74,7 @@ pipeline that extends career equity to underrepresented demographics. Their goal
 biases in the job candidate hiring and interview process, as well as to reduce redundancy and ineffectiveness of the 
 traditional applicant tracking software matching viable candidates with job descriptions.
 
-For this purpose, the organization strives to implement a supplemental HR platform that anonymizes candidate 
+For this purpose, the organization strives to implement a supplemental HR platform - ClearView - that anonymizes candidate 
 information while highlighting their objective skills and qualifying experience. Candidates will upload their resumes 
 and the system will leverage AI to construct stories about them, while eliminating all personal information. Companies 
 will post job descriptions and will pay to unlock matched profiles. Data points will be aggregated to reveal any 
@@ -144,7 +147,7 @@ We identified the following driving characteristics of our architecture:
 | Workflow           | Because the business logic of user interactions consists of multiple steps separated in time, and is likely to evolve and change.                                                                |
 
 Another important characteristic we identified is **Cost efficiency**, because we’re dealing with a non-profit 
-organization, and we assume tough budget constraints.
+organization, and we assume tough budget constraints (you can find our budget estimates [here](#cost-estimation)).
 
 Given the driving characteristics above, we have selected **Event-driven architecture** style in the Styles Worksheet, 
 because it fits these characteristics best. This is our first architectural decision: 
@@ -277,7 +280,7 @@ pretty standard
 The Event analytics model is very simple: it’s a single entity which holds the data about all the business events that 
 have occurred in the system.
 
-![Event model for analytics](images%2Fevent-model.png | width=200)
+<img src="images/event-model.png" width="300" alt="Event model for analytics">
 
 The `key` field is an idempotency key - a unique identifier of an event.
 
